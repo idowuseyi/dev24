@@ -1,0 +1,33 @@
+create any module with
+nest g module users
+nest g controller users
+nest g service users
+
+
+
+controllers handles the route
+we can have more than one controller
+all route with child must come before the route that takes param
+This order is very important
+
+the provider handles the logic for our controller
+we create the logic in the provider and inject it.
+
+The data in our routes are not being validated and this can lead to further problems. It returns status ok with any data which is wrong
+This is where Pipes comes in. They are used to transform data or to validate the data.
+
+
+DataTransformObject schema helps to hold parameter types definition in one place. This helps to avoid defining them all around
+
+the checks are already extended to the update types so we dont need to apply validation on it.
+
+Connection to database
+Neon - serverless postgres for the database
+Prisma - for the ORM
+
+sign up for free acount on neon.tech
+
+cors, rate limiting, server logs,
+cross origin resource sharing
+rate limiting with throttling
+Logger -catch all the error both from all requests and databases

@@ -1,0 +1,24 @@
+nest auth is handled by passport
+
+session and JWT
+This are the two different ways to hold a user login
+
+sessions
+when the user login we will see the req when they login and we will grab the request after loggin and we will grab the user details from the session and we can then access it in other routes
+We can set the session to expire so we dont have a user which is always log in
+The problem with session is that it introduces state and you have to think of where to store it may be redis
+But what if we dont want another storage. This is where JWT tokens comes in
+
+Comparing the two
+with session you keep a lot of information to yourself and prevent the user from going beyon the server side. It is more secure but then you have a session to manage
+For JWT no session to manage and it is stateless but what if someone created a fake JWT.
+So it all boils down to what you're trying to do.
+If we protect the route, it will always bounce. This is where sessions comes in. From the session we can know if the user is logged in and make them to proceed.
+
+JWT tokens
+
+then dont use in memory for production there can be a memory leak. You can use redis
+express session works like this. When a new session is created for a user it comes back in form of cookie but all the cookie has is a key to the store. The cookie itself does not have  the user info, it only holds a key to the record we have in the sotre itself. The advantage is taht we are not exposing the user information in itself.
+A cookie must expire, very important.
+
+the cookie get saved in the browser and get requested every now and then. and they an always expire.
