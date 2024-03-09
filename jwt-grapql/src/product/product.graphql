@@ -1,0 +1,25 @@
+type Product {
+  name: String
+  price: Int
+}
+
+input CreateProductInput {
+  # Example field (placeholder)
+  exampleField: Int
+}
+
+input UpdateProductInput {
+  id: Int!
+}
+
+type Query {
+  getToken:String
+  product: [Product]!
+  getAllProducts: Product
+}
+
+type Mutation {
+  createProduct(createProductInput: CreateProductInput!): Product!
+  updateProduct(updateProductInput: UpdateProductInput!): Product!
+  removeProduct(id: Int!): Product
+}
